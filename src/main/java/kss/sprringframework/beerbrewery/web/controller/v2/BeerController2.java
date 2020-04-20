@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Slf4j
 @RestController
-@RequestMapping(BeerController.BEER_CONTROLLER_URL)
+@RequestMapping(BeerController2.BEER_CONTROLLER_URL)
 public class BeerController2 {
     public static final String BEER_CONTROLLER_URL = "/api/v2/beer";
     private final BeerService2 beerService;

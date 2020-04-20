@@ -1,6 +1,7 @@
 package kss.sprringframework.beerbrewery.services;
 
 import kss.sprringframework.beerbrewery.web.model.Beer;
+import kss.sprringframework.beerbrewery.web.model.v2.BeerStyleEnum;
 import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ public class BeerServiceImpl implements BeerService {
     public Beer getBeerById(UUID id) {
         return Beer.builder().id(id)
                 .beerName("Calaxy beer")
-                .beerStyle("Pale ale")
+                .beerStyle("PALE_ALE")
                 .build();
     }
 

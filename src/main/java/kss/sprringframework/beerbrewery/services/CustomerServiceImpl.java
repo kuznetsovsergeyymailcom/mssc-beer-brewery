@@ -15,7 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer saveNewCustomer(Customer beer) {
-        return Customer.builder().id(beer.getId()).name("New customer").build();
+        return Customer.builder().id(UUID.randomUUID()).name("New customer").build();
     }
 
     @Override

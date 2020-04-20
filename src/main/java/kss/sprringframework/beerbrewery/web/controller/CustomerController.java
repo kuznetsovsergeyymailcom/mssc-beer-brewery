@@ -2,6 +2,7 @@ package kss.sprringframework.beerbrewery.web.controller;
 
 import kss.sprringframework.beerbrewery.services.CustomerService;
 import kss.sprringframework.beerbrewery.web.model.Customer;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,11 +29,11 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<Customer> addNewCustomer(@RequestBody Customer customer){
+    public ResponseEntity addNewCustomer(@RequestBody Customer customer){
         Customer customer1 = customerService.saveNewCustomer(customer);
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Location", CUSTOMER_CONTROLLER_URL);
-        return new ResponseEntity<>(customer1, HttpStatus.CREATED);
+        httpHeaders.add("Location", CUSTOMER_CONTROLLER_URL + "/" + customer1.getId());
+        return new ResponseEntity<>(httpHeaders, HttpStatus.CREATED);
     }
 
     @PutMapping({CUSTOMER_GET_BY_ID})
