@@ -1,12 +1,12 @@
 package kss.sprringframework.beerbrewery.services;
 
-import kss.sprringframework.beerbrewery.web.model.Beer;
+import kss.sprringframework.beerbrewery.web.model.BeerDto;
 
 import java.util.UUID;
 
 public interface BeerService {
-    Beer getBeerById(UUID id);
-    Beer saveNewBeer(Beer beer);
-    void updateBeer(UUID beerId, Beer beer);
+    BeerDto getBeerById(UUID id);
+    BeerDto saveNewBeer(BeerDto beerDto);
+    void updateBeer(UUID beerId, BeerDto beerDto);
     void deleteBeerById(UUID beerId);
 }

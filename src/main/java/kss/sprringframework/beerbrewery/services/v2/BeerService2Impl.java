@@ -1,26 +1,26 @@
 package kss.sprringframework.beerbrewery.services.v2;
 
-import kss.sprringframework.beerbrewery.web.model.Beer;
+import kss.sprringframework.beerbrewery.web.model.BeerDto;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 @Service
 public class BeerService2Impl implements BeerService2 {
     @Override
-    public Beer getBeerById(UUID id) {
-        return Beer.builder().id(id)
+    public BeerDto getBeerById(UUID id) {
+        return BeerDto.builder().id(id)
                 .beerName("Galaxy beer")
                 .beerStyle("Pale ale")
                 .build();
     }
 
     @Override
-    public Beer saveNewBeer(Beer beer) {
-        return Beer.builder().id(UUID.randomUUID()).build();
+    public BeerDto saveNewBeer(BeerDto beerDto) {
+        return BeerDto.builder().id(UUID.randomUUID()).build();
     }
 
     @Override
-    public void updateBeer(UUID beerId, Beer beer) {
+    public void updateBeer(UUID beerId, BeerDto beerDto) {
         // TODO some logic
     }
 

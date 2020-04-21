@@ -1,6 +1,6 @@
 package kss.sprringframework.beerbrewery.services;
 
-import kss.sprringframework.beerbrewery.web.model.Customer;
+import kss.sprringframework.beerbrewery.web.model.CustomerDto;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -8,18 +8,18 @@ import java.util.UUID;
 @Service
 public class CustomerServiceImpl implements CustomerService {
     @Override
-    public Customer getCustomerById(UUID id) {
+    public CustomerDto getCustomerById(UUID id) {
 
-        return Customer.builder().id(id).name("New customer").build();
+        return CustomerDto.builder().id(id).name("New customer").build();
     }
 
     @Override
-    public Customer saveNewCustomer(Customer beer) {
-        return Customer.builder().id(UUID.randomUUID()).name("New customer").build();
+    public CustomerDto saveNewCustomer(CustomerDto beer) {
+        return CustomerDto.builder().id(UUID.randomUUID()).name("New customer").build();
     }
 
     @Override
-    public void updateCustomer(UUID beerId, Customer beer) {
+    public void updateCustomer(UUID beerId, CustomerDto beer) {
         // to do add update logic
     }
 
